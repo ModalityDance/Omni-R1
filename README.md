@@ -259,3 +259,18 @@ If you use **Omni-R1** in your research or applications, please consider citing:
   year         = {}
 }
 ```
+
+---
+
+<div align="center">
+
+<a href="https://github.com/ModalityDance/Omni-R1">
+  <img src="https://img.shields.io/badge/⭐ Star%20us%20on%20GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
+</a>
+
+<a href="https://github.com/ModalityDance/Omni-R1/issues">
+  <img src="https://img.shields.io/badge/🐞 Report%20Issues-e74c3c?style=for-the-badge&logo=github" />
+</a>
+
+
+</div>
