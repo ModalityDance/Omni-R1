@@ -49,7 +49,7 @@ Includes Omni-Bench data and a vLLM-based evaluation script that runs inference 
 
 <div style="max-height: 240px; overflow-y: auto;">
 
-- **[2026.01]** 🎉 Initial code release of Omni-R1.
+- **[2026.01]** Initial code release of Omni-R1.
 
 </div>
 
