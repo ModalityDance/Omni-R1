@@ -20,7 +20,7 @@
   </a>
 
   <!-- Omni-Bench Badge -->
-  <a href="">
+  <a href="https://huggingface.co/datasets/charlesdj/Omni-Bench">
     <img src="https://img.shields.io/badge/OmniBench-Available-4c1?style=for-the-badge" alt="Omni-Bench">
   </a>
     <img src="./assets/overview.png" alt="vision">
@@ -32,14 +32,16 @@ Welcome to **Omni-R1**! 👋 This repository provides implementation code for *"
 We instantiate this paradigm with Omni-R1, a two-stage SFT+RL framework featuring perception alignment loss and perception reward, thereby enabling functional image generation. Additionally, we introduce Omni-R1-Zero, which eliminates the need for multimodal annotations by bootstrapping step-wise visualizations from text-only reasoning data. 
 
 ### 🪐 Key Features
+> [!IMPORTANT]
+> Faster Evaluation & RL Rollouts with vLLM. Our evaluation and RL rollout pipelines are accelerated by vLLM, which can significantly reduce inference time of large-scale sampling and long rollouts.
 
 🧭 **Two-stage training pipeline**  
-PeSFT introduces perception alignment loss during SFT, and PeRPO applies a perception reward during RL to enable functional image generation.
+PeSFT introduces perception alignment loss during SFT, and PeRPO applies a perception reward during RL to enhance functional image generation.
 
 🌌 **Two training regimes under different supervision**  
 Omni-R1 uses multimodal interleaved supervision, while Omni-R1-Zero bootstraps step-wise visualizations from text-only reasoning data.
 
-🧩 **Benchmark (Omni-Bench + vLLM eval)**  
+🧩 **Benchmark**  
 Includes Omni-Bench data and a vLLM-based evaluation script that runs inference efficiently and saves predictions in JSONL format.
 
 
@@ -97,6 +99,9 @@ git clone https://github.com/volcengine/verl && cd verl
 
 - **Omni-R1-Zero**: M3CoT  
   https://huggingface.co/datasets/LightChen2333/M3CoT
+  
+> [!NOTE]
+> 🚧 **Bootstrapping Step-wise visualization: Coming soon.**
 
 
 ### 3. Running <span id="running"></span>
@@ -167,14 +172,16 @@ deepspeed --num_gpus 8 src/PeSFT/pesft.py \
 ```
 
 #### **PeRPO**
+> [!NOTE]
+> 🚧 **Full training recipe: Coming soon.** We will release the end-to-end training recipe after cleaning as soon as possible.
 
+> [!TIP]
+> You can build the recipe based on **verl**’s **DAPO** training pipeline, and directly reuse the reward functions in `src/PeRPO/rewards`.
 Check the perception-calibrated reward implementation in:
 
 ```python
 src.PeRPO.rewards
 ```
-
-Full training recipes are coming soon. PeRPO can be implemented on top of verl’s DAPO, together with our released reward functions.
 
 
 ## 🧪 Training Pipelines <span id="training-pipelines"></span>
@@ -206,33 +213,40 @@ A high-level overview is illustrated in the figure below.
 
 ```plaintext
 .
-├─omni-bench
-│  ├─ omni-bench.parquet        # Benchmark dataset
-│  └─ vllm_eval.py              # vLLM inference
+├── omni-bench/
+│   ├── omni-bench.parquet         # Benchmark dataset
+│   └── vllm_eval.py               # vLLM inference / evaluation
 │
-└─src
-   ├─Inference
-   │  └─ inference.py           # Chameleon inference
-   ├─PeRPO
-   │  └─ rewards.py             # Perception reward utilities
-   └─PeSFT
-      ├─ perception.py          # Perception module
-      ├─ perception_module.ckpt # Perception module checkpoint
-      ├─ pesft.py               # PeSFT training
-      └─ trainer.py             # Training utilities
+└── src/
+    ├── Inference/
+    │   └── inference.py            # Chameleon inference
+    │
+    ├── PeRPO/
+    │   └── rewards.py              # Perception reward utilities
+    │
+    ├── PeSFT/
+    │   ├── perception.py           # Perception module
+    │   ├── perception_module.ckpt  # Perception module checkpoint
+    │   ├── pesft.py                # PeSFT training
+    │   └── trainer.py              # Training utilities
+    │
+    └── transformers/
 ```
 
 ## 🌱 **Acknowledgements** <span id="acknowledgements"></span>
 
 We would like to thank the contributors, open-source projects, and research communities whose work made **Omni-R1** possible. We also acknowledge helpful discussions and support from the members of Modality Dance Group.
 
-- [[Model]](https://github.com/GAIR-NLP/anole) The GAIR-NLP team for releasing the open-source Anole model.
-- [[Code]](https://github.com/GAIR-NLP/thinking-with-generated-images) The GAIR-NLP team for open-sourcing the training codebase and recipes.
-- [[Training Exp]](https://iclr-blogposts.github.io/2025/blog/fine-tuning-token-based-large-multimodal-models/) The GAIR-NLP team for sharing practical training insights.
-- [[Dataset]](https://huggingface.co/datasets/multimodal-reasoning-lab/Zebra-CoT) Zebra-CoT dataset used for multimodal supervision in Omni-R1.
-- [[Dataset]](https://huggingface.co/datasets/LightChen2333/M3CoT) M3CoT dataset used for text-only reasoning data in Omni-R1-Zero.
-- [[Fine-tuning Framework]](https://github.com/huggingface/transformers) Hugging Face Transformers for providing the fine-tuning framework and model support.
-- [[RL Framework]](https://github.com/volcengine/verl) verl for providing the RL training framework.
+<!-- Acknowledgement tags (badges) -->
+[![Anole](https://img.shields.io/badge/Model-Anole-blue?style=flat&logo=github)](https://github.com/GAIR-NLP/anole)
+[![Anole_Training](https://img.shields.io/badge/Code-thinking--with--generated--images-blue?style=flat&logo=github)](https://github.com/GAIR-NLP/thinking-with-generated-images)
+[![Training%20Experience](https://img.shields.io/badge/Training%20Exp-ICLR%20Blog-blue?style=flat&logo=gitbook)](https://iclr-blogposts.github.io/2025/blog/fine-tuning-token-based-large-multimodal-models/)
+[![Zebra-CoT](https://img.shields.io/badge/Dataset-Zebra--CoT-blue?style=flat&logo=huggingface)](https://huggingface.co/datasets/multimodal-reasoning-lab/Zebra-CoT)
+[![M3CoT](https://img.shields.io/badge/Dataset-M3CoT-blue?style=flat&logo=huggingface)](https://huggingface.co/datasets/LightChen2333/M3CoT)
+[![Fine--tuning](https://img.shields.io/badge/Fine--tuning-Transformers-blue?style=flat&logo=github)](https://github.com/huggingface/transformers)
+[![verl](https://img.shields.io/badge/RL--Framework-verl-blue?style=flat&logo=github)](https://github.com/volcengine/verl)
+[![vllm](https://img.shields.io/badge/Inference-vLLM-blue?style=flat&logo=github)](https://github.com/vllm-project/vllm)
+
 
 This project is licensed under the **MIT License**. Please refer to the LICENSE file for more details.
 
