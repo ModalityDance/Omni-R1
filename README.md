@@ -57,9 +57,9 @@ Includes Omni-Bench data and a vLLM-based evaluation script that runs inference 
 
 ✅ Reproducibility essentials for Omni-R1 (core code, datasets, checkpoints)  
 ✅ Paper link  
-✅ Omni-Bench (data + vLLM evaluation script)   
+✅ Omni-Bench (data + vLLM evaluation script)     
 ⬜ Fully end-to-end PeRPO training framework  
-⬜ The implementation of **bootstrapping step-wise visualizations**
+⬜ The implementation of bootstrapping step-wise visualizations
 
 
 ## 📑 Table of Contents <span id="table-of-contents"></span>
@@ -100,7 +100,7 @@ git clone https://github.com/volcengine/verl && cd verl
 
 ### 2. Data Preparation <span id="data"></span>
 
-#### **Required Datasets**
+**Required Datasets**
 - **Omni-R1:** [Zebra-CoT](https://huggingface.co/datasets/multimodal-reasoning-lab/Zebra-CoT)
 - **Omni-R1-Zero:** [M3CoT](https://huggingface.co/datasets/LightChen2333/M3CoT)
 
@@ -118,7 +118,7 @@ python omni-Bench/vllm_eval.py \
 ```
 
 #### **Inference with trained models**
-**Checkpoints**
+***Checkpoints***
 - Omni-R1: https://huggingface.co/ModalityDance/Omni-R1
 - Omni-R1-Zero: https://huggingface.co/ModalityDance/Omni-R1-Zero
 
