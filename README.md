@@ -124,7 +124,7 @@ Prepare the checkpoints, then run:
 python src/Inference/inference.py \
   --input /path/to/data.jsonl \
   --output-dir /path/to/out \
-  --model-path /path/to/chameleon_ckpt \
+  --model-path /path/to/ckpt \
   --processor-path /path/to/processor_ckpt \
   --append-boi \
   --do-sample \
@@ -138,7 +138,7 @@ Resume / retry:
 python src/Inference/inference.py \
   --input /path/to/jsonl_dir \
   --output-dir /path/to/out \
-  --model-path /path/to/chameleon_ckpt \
+  --model-path /path/to/ckpt \
   --append-boi \
   --resume --retry-errors
 ```
@@ -159,7 +159,7 @@ DS_JSON='{
 
 ```bash
 deepspeed --num_gpus 8 src/PeSFT/pesft.py \
-  --model_path /path/to/chameleon_ckpt \
+  --model_path /path/to/ckpt \
   --output_path checkpoints/pesft_run \
   --json_dir /path/to/zebra_cot_jsonl \
   --deepspeed_config_json "$DS_JSON" \
@@ -216,7 +216,7 @@ A high-level overview is illustrated in the figure below.
 │
 └── src/
     ├── Inference/
-    │   └── inference.py            # Chameleon inference
+    │   └── inference.py            # Inference
     │
     ├── PeRPO/
     │   └── rewards.py              # Perception reward utilities
