@@ -1,0 +1,32 @@
+hydra:
+  searchpath:
+    -
+
+defaults:
+  - ppo_trainer
+  - _self_
+
+data:
+  gen_batch_size: ${data.train_batch_size}
+
+reward_model:
+  reward_manager: perpo
+  overlong_buffer: 
+    enable: False
+    len: 0
+    penalty_factor: 0.0
+    log: False
+
+custom_reward_function:
+  path: 
+  name: compute_score
+  
+algorithm:
+  filter_groups:
+    enable: False
+    metric: 
+    max_num_gen_batches: 0
+
+trainer:
+  project_name: perpo
+  log_val_generations: 20
