@@ -100,7 +100,7 @@ git clone https://github.com/volcengine/verl && cd verl
 
 ### 2. Data Preparation <span id="data"></span>
 
-**Required Datasets**
+***Required Datasets***
 - **Omni-R1:** [Zebra-CoT](https://huggingface.co/datasets/multimodal-reasoning-lab/Zebra-CoT)
 - **Omni-R1-Zero:** [M3CoT](https://huggingface.co/datasets/LightChen2333/M3CoT)
 
