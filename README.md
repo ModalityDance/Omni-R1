@@ -12,16 +12,16 @@
 
   <!-- HuggingFace Models -->
   <a href="https://huggingface.co/ModalityDance/Omni-R1">
-    <img src="https://img.shields.io/badge/HuggingFace-Omni_R1-fcc21b?style=for-the-badge&logo=huggingface&logoColor=white" alt="Omni-R1">
+    <img src="https://img.shields.io/badge/HuggingFace-Omni--R1-fcc21b?style=for-the-badge&logo=huggingface&logoColor=white" alt="Omni-R1">
   </a>
     
   <a href="https://huggingface.co/ModalityDance/Omni-R1-Zero">
-    <img src="https://img.shields.io/badge/HuggingFace-Omni_R1_Zero-fcc21b?style=for-the-badge&logo=huggingface&logoColor=white" alt="Omni-R1-Zero">
+    <img src="https://img.shields.io/badge/HuggingFace-Omni--R1--Zero-fcc21b?style=for-the-badge&logo=huggingface&logoColor=white" alt="Omni-R1-Zero">
   </a>
 
   <!-- Omni-Bench Badge -->
   <a href="https://huggingface.co/datasets/ModalityDance/Omni-Bench">
-    <img src="https://img.shields.io/badge/OmniBench-Available-4c1?style=for-the-badge" alt="Omni-Bench">
+    <img src="https://img.shields.io/badge/Omni--Bench-Available-4c1?style=for-the-badge" alt="Omni-Bench">
   </a>
     <img src="./assets/overview.png" alt="vision">
 </div>
@@ -49,9 +49,18 @@ Includes Omni-Bench data and a vLLM-based evaluation script that runs inference 
 
 <div style="max-height: 240px; overflow-y: auto;">
 
-- **[2026.01]** Initial code release of Omni-R1.
+- **[2026.01]** Initial release of Omni-R1.
 
 </div>
+
+## Roadmap
+
+✅ Reproducibility essentials for Omni-R1 (core code, datasets, checkpoints)  
+✅ Paper link  
+✅ Omni-Bench (data + vLLM evaluation script)  
+
+⬜ Fully end-to-end PeRPO training framework  
+⬜ The implementation of **bootstrapping step-wise visualizations**
 
 
 ## 📑 Table of Contents <span id="table-of-contents"></span>
@@ -117,6 +126,9 @@ python Omni-Bench/vllm_eval.py \
 ```
 
 #### **Inference with trained models**
+**Checkpoints**
+- Omni-R1: https://huggingface.co/ModalityDance/Omni-R1
+- Omni-R1-Zero: https://huggingface.co/ModalityDance/Omni-R1-Zero
 
 Prepare the checkpoints, then run:
 
@@ -194,8 +206,13 @@ src.PeRPO.rewards
 
 
 ## ✨ How It Works <span id="how-it-works"></span>
+Omni-R1 learns to generate interleaved multimodal reasoning trajectories through a two-stage SFT → RL pipeline.
 
-🪐 **Omni-R1** is built around a two-stage pipeline for generative multimodal reasoning, with each component corresponding to a well-defined stage in the overall method.  
+- **Omni-R1:** is trained on annotated interleaved multimodal trajectories.
+- **Omni-R1-Zero:** when such annotations are unavailable, bootstraps interleaved trajectories from text-only CoT by visualizing per reasoning step, and then trains with the same pipeline.
+- **PeSFT:** performs supervised fine-tuning with cross-entropy plus a perception alignment loss to stabilize the functional image generation.
+- **PeRPO:** refines the policy with group-relative RL on unified tasks using a composite reward—Accuracy, Format, and Perception.
+
 A high-level overview is illustrated in the figure below.
 
 <div align="center">
@@ -232,7 +249,7 @@ A high-level overview is illustrated in the figure below.
 
 ## 🌱 **Acknowledgements** <span id="acknowledgements"></span>
 
-We would like to thank the contributors, open-source projects, and research communities whose work made **Omni-R1** possible. We also acknowledge helpful discussions and support from the members of Modality Dance Group.
+We would like to thank the contributors, open-source projects, and research communities whose work made **Omni-R1** possible.
 
 <!-- Acknowledgement tags (badges) -->
 [![Anole](https://img.shields.io/badge/Model-Anole-blue?style=flat&logo=github)](https://github.com/GAIR-NLP/anole)
