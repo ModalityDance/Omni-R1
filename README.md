@@ -211,7 +211,7 @@ A high-level overview is illustrated in the figure below.
 ```plaintext
 .
 ├── omni-bench/
-│   ├── omni-bench.parquet         # Benchmark dataset
+│   ├── omni-bench.parquet         # Benchmark dataset (Available in HF)
 │   └── vllm_eval.py               # vLLM inference / evaluation
 │
 └── src/
