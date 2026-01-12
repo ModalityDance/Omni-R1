@@ -33,7 +33,7 @@ We instantiate this paradigm with Omni-R1, a two-stage SFT+RL framework featurin
 
 ### 🪐 Key Features
 > [!IMPORTANT]
-> Faster Evaluation & RL Rollouts with vLLM. Our evaluation and RL rollout pipelines are accelerated by vLLM, which can significantly reduce inference time of large-scale sampling and long rollouts.
+> Faster Evaluation & RL Rollouts with vLLM. Our evaluation and RL rollout pipelines(based on verl) are accelerated by vLLM, which can significantly reduce the inference time of large-scale sampling and long rollouts.
 
 🧭 **Two-stage training pipeline**  
 PeSFT introduces perception alignment loss during SFT, and PeRPO applies a perception reward during RL to enhance functional image generation.
