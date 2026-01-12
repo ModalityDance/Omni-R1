@@ -57,8 +57,7 @@ Includes Omni-Bench data and a vLLM-based evaluation script that runs inference 
 
 ✅ Reproducibility essentials for Omni-R1 (core code, datasets, checkpoints)  
 ✅ Paper link  
-✅ Omni-Bench (data + vLLM evaluation script)  
-
+✅ Omni-Bench (data + vLLM evaluation script)   
 ⬜ Fully end-to-end PeRPO training framework  
 ⬜ The implementation of **bootstrapping step-wise visualizations**
 
