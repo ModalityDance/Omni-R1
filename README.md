@@ -70,7 +70,7 @@ Includes Omni-Bench data and a vLLM-based evaluation script that runs inference 
 
 ### 1. Environment Setup <span id="installation"></span>
 
-#### **Inference&PeSFT**
+#### **Requirements for Inference & PeSFT**
 
 ```bash
 python -m venv .venv
@@ -81,7 +81,7 @@ pip install -r requirements.txt
 pip install ./src/transformers
 ```
 
-#### **PeRPO**
+#### **Requirements for PeRPO**
 
 ```bash
 git clone https://github.com/volcengine/verl && cd verl
