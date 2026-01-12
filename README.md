@@ -102,15 +102,8 @@ git clone https://github.com/volcengine/verl && cd verl
 ### 2. Data Preparation <span id="data"></span>
 
 #### **Required Datasets**
-
-- **Omni-R1**: Zebra-CoT  
-  https://huggingface.co/datasets/multimodal-reasoning-lab/Zebra-CoT
-
-- **Omni-R1-Zero**: M3CoT  
-  https://huggingface.co/datasets/LightChen2333/M3CoT
-  
-> [!NOTE]
-> 🚧 **Bootstrapping step-wise visualization: Coming soon.**
+- **Omni-R1:** [Zebra-CoT](https://huggingface.co/datasets/multimodal-reasoning-lab/Zebra-CoT)
+- **Omni-R1-Zero:** [M3CoT](https://huggingface.co/datasets/LightChen2333/M3CoT)
 
 
 ### 3. Running <span id="running"></span>
@@ -118,8 +111,8 @@ git clone https://github.com/volcengine/verl && cd verl
 #### **Evaluate on Omni-Bench with vLLM**
 
 ```bash
-python Omni-Bench/vllm_eval.py \
-  --parquet_path /path/to/omni-bench_cleaned.parquet \
+python omni-Bench/vllm_eval.py \
+  --parquet_path /path/to/omni-bench.parquet \
   --model_path /path/to/your_model \
   --outfile preds.jsonl \
   --mm_images_per_prompt 5
@@ -144,7 +137,7 @@ python src/Inference/inference.py \
   --top-p 0.9
 ```
 
-Resume / retry:
+Resume:
 
 ```bash
 python src/Inference/inference.py \
@@ -185,11 +178,11 @@ deepspeed --num_gpus 8 src/PeSFT/pesft.py \
 
 #### **PeRPO**
 > [!TIP]
-We will release the end-to-end training recipe as soon as possible after cleaning. You can build the recipe based on **verl**’s **DAPO** training pipeline, and directly reuse the reward functions in `src/PeRPO/rewards`.
+We will release the end-to-end training recipe as soon as possible after it has been cleaned. You can build the recipe based on **verl**’s **DAPO** training pipeline, and directly reuse the reward functions in `src/PeRPO/rewards`.
 Check the perception-calibrated reward implementation in:
 
 ```python
-src.PeRPO.rewards
+See: src.PeRPO.rewards
 ```
 
 
@@ -219,7 +212,6 @@ A high-level overview is illustrated in the figure below.
   <figure>
     <img src="./assets/framework.png" alt="Overview" style="max-width: 100%; height: auto;">
     <br>
-    <figcaption><em>The framework of Omni-R1.</em></figcaption>
   </figure>
 </div>
 
