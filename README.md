@@ -101,7 +101,7 @@ git clone https://github.com/volcengine/verl && cd verl
   https://huggingface.co/datasets/LightChen2333/M3CoT
   
 > [!NOTE]
-> 🚧 **Bootstrapping Step-wise visualization: Coming soon.**
+> 🚧 **Bootstrapping step-wise visualization: Coming soon.**
 
 
 ### 3. Running <span id="running"></span>
