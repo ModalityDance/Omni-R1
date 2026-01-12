@@ -11,16 +11,16 @@
   </a>
 
   <!-- HuggingFace Models -->
-  <a href="https://huggingface.co/charlesdj/Omni-R1">
+  <a href="https://huggingface.co/ModalityDance/Omni-R1">
     <img src="https://img.shields.io/badge/HuggingFace-Omni_R1-fcc21b?style=for-the-badge&logo=huggingface&logoColor=white" alt="Omni-R1">
   </a>
     
-  <a href="https://huggingface.co/charlesdj/Omni-R1-Zero">
+  <a href="https://huggingface.co/ModalityDance/Omni-R1-Zero">
     <img src="https://img.shields.io/badge/HuggingFace-Omni_R1_Zero-fcc21b?style=for-the-badge&logo=huggingface&logoColor=white" alt="Omni-R1-Zero">
   </a>
 
   <!-- Omni-Bench Badge -->
-  <a href="https://huggingface.co/datasets/charlesdj/Omni-Bench">
+  <a href="https://huggingface.co/datasets/ModalityDance/Omni-Bench">
     <img src="https://img.shields.io/badge/OmniBench-Available-4c1?style=for-the-badge" alt="Omni-Bench">
   </a>
     <img src="./assets/overview.png" alt="vision">
