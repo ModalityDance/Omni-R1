@@ -172,11 +172,8 @@ deepspeed --num_gpus 8 src/PeSFT/pesft.py \
 ```
 
 #### **PeRPO**
-> [!NOTE]
-> 🚧 **Full training recipe: Coming soon.** We will release the end-to-end training recipe after cleaning as soon as possible.
-
 > [!TIP]
-> You can build the recipe based on **verl**’s **DAPO** training pipeline, and directly reuse the reward functions in `src/PeRPO/rewards`.
+We will release the end-to-end training recipe as soon as possible after cleaning. You can build the recipe based on **verl**’s **DAPO** training pipeline, and directly reuse the reward functions in `src/PeRPO/rewards`.
 Check the perception-calibrated reward implementation in:
 
 ```python
