@@ -33,7 +33,7 @@ We instantiate this paradigm with Omni-R1, a two-stage SFT+RL framework featurin
 
 ### 🪐 Key Features
 > [!IMPORTANT]
-> Faster Evaluation & RL Rollouts with vLLM. Our evaluation and RL rollout pipelines(based on verl) are accelerated by vLLM, which can significantly reduce the inference time of large-scale sampling and long rollouts.
+> Faster Evaluation & RL Rollouts with vLLM. Our evaluation and RL rollout pipelines (based on verl) are accelerated by vLLM, which can significantly reduce the inference time of large-scale sampling and long rollouts.
 
 🧭 **Two-stage training pipeline**  
 PeSFT introduces perception alignment loss during SFT, and PeRPO applies a perception reward during RL to enhance functional image generation.
@@ -72,6 +72,7 @@ Includes Omni-Bench data and a vLLM-based evaluation script that runs inference 
     * [PeSFT](#train-pesft)
     * [PeRPO](#train-perpo)
   * [3. Inference](#inference)
+    * [Checkpoints](#inference-checkpoints)
     * [Run](#inference-run)
   * [4. Omni-Bench](#omni-bench)
     * [Data](#omni-bench-data)
@@ -104,6 +105,10 @@ git clone https://github.com/volcengine/verl && cd verl
 ---
 
 ### 2. Train <span id="train"></span>
+> [!TIP]
+> If you only want to run inference with our pretrained checkpoints, you can skip this training section and jump to [3. Inference](#inference).  
+> If you only want to evaluate on our benchmark, you can go directly to [4. Omni-Bench](#omni-bench).
+
 #### Data <span id="train-data"></span>
 - **Omni-R1** supervision: Zebra-CoT  
   https://huggingface.co/datasets/multimodal-reasoning-lab/Zebra-CoT
@@ -174,7 +179,7 @@ deepspeed --num_gpus 8 src/PeSFT/pesft.py \
 ### 3. Inference <span id="inference"></span>
 You can skip training with our pretrained models below:
 
-***Checkpoints***
+#### Checkpoints <span id="inference-checkpoints"></span>
 - Omni-R1: https://huggingface.co/ModalityDance/Omni-R1
 - Omni-R1-Zero: https://huggingface.co/ModalityDance/Omni-R1-Zero
 
