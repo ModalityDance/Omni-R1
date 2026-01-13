@@ -142,7 +142,7 @@ deepspeed --num_gpus 8 src/PeSFT/pesft.py \
 <details>
 <summary>What PeSFT does?</summary>
 
-- Supervised finetuning with cross-entropy + **perception alignment loss** to stabilize / improve functional image generation.
+- Supervised finetuning with cross-entropy + perception alignment loss to stabilize functional image generation.
 
 </details>
 
@@ -204,7 +204,7 @@ python src/Inference/inference.py \
 - `--output-dir`: where predictions are saved
 - `--model-path`: your checkpoint
 - `--processor-path`: processor checkpoint path
-- `--append-boi`: appends BOI token (if your model expects it)
+- `--append-boi`: appends BOI token
 - `--do-sample`, `--temperature`, `--top-p`: sampling settings
 
 </details>
