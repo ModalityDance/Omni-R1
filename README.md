@@ -148,7 +148,7 @@ deepspeed --num_gpus 8 src/PeSFT/pesft.py \
 
 #### PeRPO <span id="train-perpo"></span>
 > [!NOTE]
-> The end-to-end PeRPO training recipe is being cleaned up and will be released in a more complete, reproducible form soon.
+> The end-to-end PeRPO training recipe is being organized and will be released in a more complete form soon.
 
 > [!TIP]
 > PeRPO can be reproduced by following **verl**’s **DAPO** recipe.
