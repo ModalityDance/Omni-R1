@@ -6,7 +6,7 @@
 
 <div align="center">
   <!-- Paper Link -->
-  <a href="">
+  <a href="https://arxiv.org/abs/2601.09536">
     <img src="https://img.shields.io/badge/Paper-arXiv-b31b1b?style=for-the-badge&logo=arxiv" alt="Paper">
   </a>
 
@@ -310,11 +310,14 @@ This project is licensed under the **MIT License**. Please refer to the LICENSE 
 If you use **Omni-R1** in your research or applications, please consider citing:
 
 ```bibtex
-@article{omnir1,
-  title        = {Omni-R1: Towards the Unified Generative Paradigm for Multimodal Reasoning},
-  author       = {},
-  journal      = {arXiv preprint arXiv:{}},
-  year         = {}
+@misc{cheng2026omnir1unifiedgenerativeparadigm,
+      title={Omni-R1: Towards the Unified Generative Paradigm for Multimodal Reasoning}, 
+      author={Dongjie Cheng and Yongqi Li and Zhixin Ma and Hongru Cai and Yupeng Hu and Wenjie Wang and Liqiang Nie and Wenjie Li},
+      year={2026},
+      eprint={2601.09536},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2601.09536}, 
 }
 ```
 
