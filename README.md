@@ -7,21 +7,26 @@
 <div align="center">
   <!-- Paper Link -->
   <a href="https://arxiv.org/abs/2601.09536">
-    <img src="https://img.shields.io/badge/Paper-arXiv-b31b1b?style=for-the-badge&logo=arxiv" alt="Paper">
+    <img src="https://img.shields.io/badge/Paper-arXiv-b31b1b?style=for-the-badge&logo=arxiv" alt="Paper"  height="25">
   </a>
+  <!-- HuggingFace Papers -->
 
+<a href="https://huggingface.co/papers/2601.09536">
+    <img src="https://img.shields.io/badge/HuggingFace-Papers-fcc21b?style=for-the-badge&logo=huggingface&logoColor=white" alt="HF Papers"  height="25">
+  </a>
+  
   <!-- HuggingFace Models -->
   <a href="https://huggingface.co/ModalityDance/Omni-R1">
-    <img src="https://img.shields.io/badge/HuggingFace-Omni--R1-fcc21b?style=for-the-badge&logo=huggingface&logoColor=white" alt="Omni-R1">
+    <img src="https://img.shields.io/badge/HuggingFace-Omni--R1-fcc21b?style=for-the-badge&logo=huggingface&logoColor=white" alt="Omni-R1" height="25">
   </a>
     
   <a href="https://huggingface.co/ModalityDance/Omni-R1-Zero">
-    <img src="https://img.shields.io/badge/HuggingFace-Omni--R1--Zero-fcc21b?style=for-the-badge&logo=huggingface&logoColor=white" alt="Omni-R1-Zero">
+    <img src="https://img.shields.io/badge/HuggingFace-Omni--R1--Zero-fcc21b?style=for-the-badge&logo=huggingface&logoColor=white" alt="Omni-R1-Zero" height="25">
   </a>
 
   <!-- Omni-Bench Badge -->
   <a href="https://huggingface.co/datasets/ModalityDance/Omni-Bench">
-    <img src="https://img.shields.io/badge/Omni--Bench-Available-4c1?style=for-the-badge" alt="Omni-Bench">
+    <img src="https://img.shields.io/badge/Omni--Bench-Available-4c1?style=for-the-badge" alt="Omni-Bench" height="25">
   </a>
     <img src="./assets/overview.png" alt="vision">
 </div>
