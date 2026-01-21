@@ -308,7 +308,7 @@ We would like to thank the contributors, open-source projects, and research comm
 [![vllm](https://img.shields.io/badge/Inference-vLLM-blue?style=flat&logo=github)](https://github.com/vllm-project/vllm)
 
 
-This project is licensed under the **MIT License**. Please refer to the LICENSE file for more details.
+This project is licensed under the **MIT License**. It also complies with the licenses of referenced third-party projects and dependencies, including the **Chameleon Research License**. Please refer to the LICENSE file for more details.
 
 ## 📚 **Citation** <span id="citation"></span>
 
