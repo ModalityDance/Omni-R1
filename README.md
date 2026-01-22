@@ -200,7 +200,6 @@ python src/Inference/inference.py \
   --output-dir "$OUTDIR" \
   --model-path "$MODEL" \
   --processor-path "$PROCESSOR" \
-  --append-boi \
   --do-sample \
   --temperature 1.0 \
   --top-p 0.9
@@ -214,7 +213,6 @@ python src/Inference/inference.py \
 - `--output-dir`: where predictions are saved
 - `--model-path`: your checkpoint
 - `--processor-path`: processor checkpoint path
-- `--append-boi`: appends BOI token
 - `--do-sample`, `--temperature`, `--top-p`: sampling settings
 
 </details>
