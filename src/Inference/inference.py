@@ -347,8 +347,7 @@ class InferenceConfig:
     top_p: float
     do_sample: bool
 
-    generation_mode: str  # e.g. "unrestricted" or "interleaved-text-image"
-    append_boi: bool
+    generation_mode: str 
     max_images: Optional[int]
 
     image_placeholder_id: Optional[int]
@@ -432,7 +431,6 @@ class ChameleonInfer:
         """
         Build input token ids for generation.
         If images are provided, replace placeholder tokens with image tokens.
-        Optionally append <boi> to force image generation.
         """
         pil_images = safe_load_images(image_paths)
 
@@ -467,8 +465,7 @@ class ChameleonInfer:
             input_ids = replace_image_placeholders(input_ids, image_tokens, self.image_placeholder_id)
 
         tokens = input_ids[0].tolist()
-        if self.cfg.append_boi:
-            tokens = tokens + [self.boi]
+        
         return tokens
 
     @torch.inference_mode()
@@ -571,8 +568,7 @@ class ChameleonInfer:
 def truncate_by_max_images(tokens: List[int], boi_id: int, eos_id: int, max_images: int) -> List[int]:
     """
     Keep at most `max_images` images, where an image is identified by <boi>.
-    This counts <boi> occurrences in the full sequence. If you append <boi> in the prompt,
-    it will be counted as the first image trigger.
+    This counts <boi> occurrences in the full sequence.
     """
     if max_images <= 0:
         return [eos_id]
@@ -652,8 +648,7 @@ def parse_args() -> InferenceConfig:
         default="unrestricted",
         help="multimodal_generation_mode for transformers generate(). e.g. 'unrestricted' or 'interleaved-text-image'.",
     )
-    ap.add_argument("--append-boi", action="store_true", help="Append <boi> to prompt tokens to force image generation.")
-    ap.add_argument("--max-images", type=int, default=None, help="Maximum number of images to keep (counts <boi>).")
+    ap.add_argument("--max-images", type=int, default=None, help="Maximum number of images to keep.")
 
     ap.add_argument("--image-placeholder-id", type=int, default=None, help="Override image placeholder token id.")
     ap.add_argument("--no-strict-decode", action="store_true", help="Disable strict image segment validation during decoding.")
@@ -692,7 +687,6 @@ def parse_args() -> InferenceConfig:
         top_p=args.top_p,
         do_sample=bool(args.do_sample),
         generation_mode=args.generation_mode,
-        append_boi=bool(args.append_boi),
         max_images=args.max_images,
         image_placeholder_id=args.image_placeholder_id,
         strict_decode=not bool(args.no_strict_decode),
