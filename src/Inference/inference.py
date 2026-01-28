@@ -461,8 +461,9 @@ class ChameleonInfer:
 
         if len(pil_images) > 0:
             pixel_values = inputs["pixel_values"]
+            vq_param = next(self.model.model.vqmodel.parameters())
+            pixel_values = pixel_values.to(device=vq_param.device, dtype=vq_param.dtype)
             image_tokens = model_get_image_tokens(self.model, pixel_values)
-            input_ids = replace_image_placeholders(input_ids, image_tokens, self.image_placeholder_id)
 
         tokens = input_ids[0].tolist()
         
